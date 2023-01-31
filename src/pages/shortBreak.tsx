@@ -36,16 +36,11 @@ const ShortBreak = () => {
       </Head>
 
       <div className={`flex flex-col w-full h-screen ${mainColor}`}>
-        <header
-          className={`w-full h-1/6 shadow-md flex items-center font-bold font-gotham p-3`}
-        >
-          <h1 className="text-white text-4xl">Short Break</h1>
-        </header>
         <main
           className={`flex flex-col w-full h-screen px-3 justify-center items-center`}
         >
           <div
-            className={`flex flex-col w-full h-4/5 bg-white shadow-lg rounded-md items-center md:w-2/3 lg:w-2/5 ease-in-out duration-300`}
+            className={`flex flex-col w-5/6 h-2/5 bg-aero-blue-300 shadow-lg rounded-md items-center justify-between p-6 max-w-[650px]`}
           >
             <List textColor={textColor} />
             <div

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 
 // Components
@@ -27,6 +27,9 @@ export default function Home() {
   const handleClick = () => {
     setChange(!change);
   };
+  const handleReset = () => {
+    setChange(!change);
+  };
 
   return (
     <>
@@ -38,24 +41,26 @@ export default function Home() {
       </Head>
 
       <div className={`flex flex-col w-full h-screen ${mainColor}`}>
-        <header
+        {/* <header
           className={`w-full h-1/6 shadow-md flex items-center font-bold font-gotham p-3`}
         >
           <h1 className="text-white text-4xl">Pomodoro</h1>
-        </header>
+        </header> */}
         <main
           className={`flex flex-col w-full h-screen px-3 justify-center items-center`}
         >
           <div
-            className={`flex flex-col w-full h-4/5 bg-white shadow-lg rounded-md items-center md:w-2/3 lg:w-2/5 ease-in-out duration-300`}
+            className={`flex flex-col w-5/6 h-2/5 bg-sunset-orange-300 shadow-lg rounded-md items-center justify-between p-6 max-w-[650px]`}
           >
             <List textColor={textColor} />
             <div
-              className={`flex flex-col w-full h-full justify-center items-center`}
+              className={`flex flex-col w-full h-auto justify-center items-center`}
             >
               <Clock textColor={textColor} time={timer} />
             </div>
-            <div className={`flex flex-row w-full h-1/3 justify-center p-4`}>
+            <div
+              className={`flex flex-row w-full h-auto justify-center items-center gap-6`}
+            >
               <Button
                 onClick={handleClick}
                 change={change}
@@ -63,6 +68,17 @@ export default function Home() {
                 shadowColor={shadowColor}
                 secondColor={secondColor}
               />
+              {change && (
+                <a className="cursor-pointer" onClick={handleReset}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    className="fill-sunset-orange-800 w-10 h-auto"
+                  >
+                    <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path>
+                  </svg>
+                </a>
+              )}
             </div>
           </div>
         </main>

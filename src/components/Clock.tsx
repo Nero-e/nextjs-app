@@ -15,7 +15,7 @@ const Clock = (props: clockProps) => {
   };
   return (
     <>
-      <h1 className={`text-8xl py-8 font-bold font-gotham ${textColor}`}>
+      <h1 className={`text-8xl font-bold font-gotham ${textColor}`}>
         {millisecondsToMinutes(time)}
       </h1>
     </>

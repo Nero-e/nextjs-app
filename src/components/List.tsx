@@ -13,15 +13,15 @@ const List = (props: listProps) => {
   ];
   return (
     <>
-      <div className={`flex flex-row-reverse w-full h-1/6 p-3`}>
+      <div className={`flex flex-row-reverse w-full h-auto`}>
         <button
           className={`sm:hidden font-gotham font-bold 
-              items-center p-2 ml-3 text-sm rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 ${textColor}`}
+              items-center  text-sm rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 ${textColor}`}
         >
           M
         </button>
         <ul
-          className={`w-full h-full sm:flex flex-row justify-between items-center font-bold hidden ${textColor}`}
+          className={`w-full h-auto sm:flex flex-row justify-between items-center font-bold hidden ${textColor} text-xl`}
         >
           {options.map(({ text, id, url }) => (
             <li key={id}>
